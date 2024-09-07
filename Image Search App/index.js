@@ -6,7 +6,11 @@ const searchResults = document.querySelector(".search-results");
 const showMoreBtn = document.getElementById("show-more-button")
 
 let inputData = '';
-let page = 1;
+let page = 0;
+
+if(page === 0) {
+    searchResults.innerHTML = ""
+}
 
 async function searchImages(query) {
     const url = `https://api.unsplash.com/search/photos?page=${page}&query=${query}&client_id=${apiKey}`
